@@ -1,0 +1,4 @@
+.rvmrc
+*.lock
+backup_and_moniterring.sublime-project
+backup_and_moniterring.sublime-workspace

@@ -11,7 +11,7 @@ s3_credentials = YAML.load_file('./config/s3.yml')
 EM.run do
   scheduler = Rufus::Scheduler::EmScheduler.start_new
 
-  scheduler.every '5m' do
+  scheduler.every '1d' do
 
     # Main dumping 
     puts "starting"

@@ -1,0 +1,4 @@
+username: user_name
+password: password
+database: database
+dump_path: file_path

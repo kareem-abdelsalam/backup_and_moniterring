@@ -1,0 +1,14 @@
+project_path = "/home/kareem/workspace/backup_and_moniterring"
+Bluepill.application("backup_and_moniterring", :log_file => "#{project_path}/log/bluepill.log", :foreground => false) do |app|
+
+  app.process("backup_and_moniterring") do |process|
+    process.working_dir = project_path
+    process.start_command = "ruby app.rb"
+    process.stop_command = "kill -QUIT {{PID}}"
+    
+    process.group = "backup_and_moniterring"
+    process.daemonize = true
+    process.pid_file = "#{project_path}/tmp/pids/backup_and_moniterring.pid"
+  end
+
+end

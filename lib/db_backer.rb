@@ -2,7 +2,7 @@ require 'cocaine'
 class DBBacker
   def dump(username, password, db_name, dir)
     filename = Time.now.strftime("%Y_%m_%d_%I_%M_%S")
-    if !File.exist?("/usr/local/db_dumps")
+    if !File.exist?(dir)
       puts "create /usr/local/db_dumps as a root then run task again and make accessible to non root users.:("
       return nil  
     else

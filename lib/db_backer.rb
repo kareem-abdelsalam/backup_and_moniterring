@@ -7,9 +7,9 @@ class DBBacker
       return nil  
     else
       c = Cocaine::CommandLine.new("mysqldump", "-u#{username} -p#{password} --database :database > :file",
-       database: db_name, file: "#{dir + filename}_dump.sql")
+       database: db_name, file: "#{dir + db_name}_#{filename}_dump.sql")
       c.run
-      return filename
+      return "#{db_name}_#{filename}"
     end  
   end
 end

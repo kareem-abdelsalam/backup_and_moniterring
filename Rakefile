@@ -16,6 +16,7 @@ namespace :db do
   desc "Uploads zip file of db dump to s3"
   task :s3_backup do
     require './lib/s3_saver.rb'
+    require 'yaml'
     s3_credentials = YAML.load_file('./config/s3.yml')
     db_credentials = YAML.load_file('./config/database.yml')
 

@@ -24,7 +24,7 @@ namespace :db do
     puts files_to_backup
     files_to_backup.each do |db_dump|
       file_name = db_dump[(db_dump.rindex('/') + 1)..(db_dump.rindex('_') - 1)]
-      S3Save.zip_and_upload(file_name, db_dump, s3_credentials["access_key_id"], s3_credentials["secret_access_key"], s3_credentials["bucket"])
+      S3Saver.zip_and_upload(file_name, db_dump, s3_credentials["access_key_id"], s3_credentials["secret_access_key"], s3_credentials["bucket"])
     end
   end
 end 
